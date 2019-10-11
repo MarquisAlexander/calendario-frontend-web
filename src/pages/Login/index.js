@@ -4,6 +4,7 @@ import api from "../../services/api";
 export default function Login({ history }) {
     const [email, setEmail] = useState('')
 
+//função chamada pelo botão
   async function HandleSubmit(event) {
     event.preventDefault();
 
@@ -11,19 +12,20 @@ export default function Login({ history }) {
 
     const { _id } = response.data;
 
-    // salvando o id do usuario localmente (f12, armazenamento/aplicação)
+// salvando o id do usuario localmente (f12, armazenamento/aplicação)
     localStorage.setItem("user", _id);
 
-    // mandando o usuário para a dashboard
+// mandando o usuário para página dashboard
     history.push("/dashboard");
   }
     return (
+
+// Formulário para realizar o login na aplicação
         <>
         <p>
           Oferecendo soluções para <strong>otimizar</strong> um bem na sua vida que dinheiro <strong>algum</strong> pode comprar... tempo
         </p>
-
-        <form onSubmit={HandleSubmit}>
+        <form onSubmit={HandleSubmit}> 
           <label htmlFor="email">E-MAIL *</label>
           <input 
           type="email"
