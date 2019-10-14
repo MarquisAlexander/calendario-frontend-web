@@ -11,6 +11,7 @@ export default function New({ history }) {
     const [price, setPrice] = useState("");
     const [thumbnail, setThumbnail] =useState(null);
 
+//mostrando preview da foto
     const preview = useMemo(() => {
         return thumbnail ? URL.createObjectURL(thumbnail) : null;
     }, [thumbnail])
@@ -20,7 +21,7 @@ export default function New({ history }) {
 
         const data = new FormData();
         const user_id = localStorage.getItem("user");
-
+//buscando os inputs 
         data.append('thumbnail', thumbnail);
         data.append("company", company);
         data.append("techs", techs);
@@ -34,6 +35,7 @@ export default function New({ history }) {
     }
 
     return (
+//formulário de cadastro de uma nova data
         <form onSubmit={handleSubmit}>
             <label 
             id="thumbnail" 
@@ -43,7 +45,6 @@ export default function New({ history }) {
                 <input type="file" onChange={event => setThumbnail(event.target.files[0])} />
                 <img src={camera} alt="Select img" />
             </label>
-
 
             <label htmlFor="company">EMPRESA *</label>
             <input 
@@ -61,7 +62,7 @@ export default function New({ history }) {
             onChange={event => setTechs(event.target.value)}
             />
 
-            <label htmlFor="valor">VALOR DA DIÁRIA * <span>(Deixe em branco para GRATUITO)</span></label>
+            <label htmlFor="valor">Quanto devo gastar no dia * <span>(Deixe em branco para GRATUITO)</span></label>
             <input 
             id="price"
             placeholder="valor cobrado por dia"
