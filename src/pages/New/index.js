@@ -46,15 +46,15 @@ export default function New({ history }) {
                 <img src={camera} alt="Select img" />
             </label>
 
-            <label htmlFor="company">EMPRESA *</label>
+            <label htmlFor="company">Assunto para lembrar *</label>
             <input 
             id="company"
-            placeholder="Sua empresa incrível"
+            placeholder="O que você não pode esquecer de fazer no dia do lembrete"
             value={company}
             onChange={event => setCompany(event.target.value)}
             />
 
-            <label htmlFor="techs">TECNOLOGIAS * <span>(separadas por vírgulas)</span></label>
+            <label htmlFor="techs">Temas * <span>(separadas por vírgulas)</span></label>
             <input 
             id="techs"
             placeholder="Quais tecnologias usam"
@@ -62,7 +62,7 @@ export default function New({ history }) {
             onChange={event => setTechs(event.target.value)}
             />
 
-            <label htmlFor="valor">Quanto devo gastar no dia * <span>(Deixe em branco para GRATUITO)</span></label>
+            <label htmlFor="valor">Quanto devo gastar no dia * <span>(Não deixe em brando, isso pode lê custar caro)</span></label>
             <input 
             id="price"
             placeholder="valor cobrado por dia"
@@ -70,7 +70,7 @@ export default function New({ history }) {
             onChange={event => setPrice(event.target.value)}
             />
 
-            <button type="submit" className="btn">Cadastrar</button>
+            <button type="submit" className="btn">Salvar lembrete</button>
         </form>
     )
 }
