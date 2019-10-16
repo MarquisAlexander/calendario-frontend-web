@@ -35,7 +35,7 @@ export default function Dashboard() {
             </ul>
             <Link to="/new">
                 <button className="btn">
-                    Cadastrar novo spot
+                    Cadastrar novo evento
                 </button>
             </Link>
         </>
