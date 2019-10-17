@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import api from "../../services/api";
 
 import "./styles.css";
+import { styles } from "ansi-colors";
 
 
 export default function Dashboard() {
@@ -15,7 +16,7 @@ export default function Dashboard() {
             const response = await api.get("/dashboard", {
                 headers: { user_id }
             });
-
+ 
             setSpots(response.data);
         }
 
@@ -29,7 +30,7 @@ export default function Dashboard() {
                     <li key={spot._id}>
                         <header style={{ backgroundImage: `url(${spot.thumbnail_url})` }} />
                         <strong>{spot.company}</strong>
-                        <span>{spot.price ? `R$${spot.price}/dia` : `GRATUITO`}</span>
+                        <span>{spot.price ? `R$${spot.price}/dia`: `Não vou gastar nada `}</span>
                     </li>
                 ))}
             </ul>

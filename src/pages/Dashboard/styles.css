@@ -21,10 +21,14 @@ ul.spot-list header {
 ul.spot-list strong {
     margin-top: 10px;
     font-size: 24px;
-    color: #999;
+    color: #fff;
 }
 
 ul.spot-list span {
     font-size: 15px;
     color: #999;
+}
+
+ul.style-Font {
+    color: "#481"
 }
